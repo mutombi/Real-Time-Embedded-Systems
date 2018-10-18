@@ -8,7 +8,7 @@ int main(void) {
 	GPIOD->MODER |= GPIO_MODER_MODER12_0;		// Set GPIOD pin 12 to output
 	
 	// Initalise Timer 2
-	RCC->AHB1ENR |= RCC_APB1ENR_TIM2EN;			// Enable timer 2 clock
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;			// Enable timer 2 clock
 	TIM2->CR1 &= ~0x00000016;		/* Sets the counter as an upcounter and counter overflow/underflow detection enabled*/
 	TIM2->CR1 |= 0x00000008; 	/* Turn off repeat in CR1 - i.e. use one pulse mode */
 	TIM2->PSC = 8400 - 1; 			/* Prescaler value - the prescaler clock defaults to twice
